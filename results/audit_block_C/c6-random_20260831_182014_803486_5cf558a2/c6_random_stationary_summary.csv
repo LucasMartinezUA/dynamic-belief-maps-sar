@@ -1,0 +1,7 @@
+contrast,endpoint,method_label,source_planning_mode,mean,sd,ci_lo,ci_hi,margin,classification,n_datasets,n_pairs
+online_static_3step,dPdet,online_static_3step,online_static_3step,0.13988234380362402,0.07983917199874989,0.10524046679804049,0.17680505895501206,0.01,IMPROVED,18,180
+online_static_3step,dRMST_rel,online_static_3step,online_static_3step,0.04248239716877344,0.045528357295054785,0.02188059054581651,0.06301928346541165,0.02,IMPROVED,18,180
+dynamic_3step,dPdet,dynamic_evidence_3step,dynamic_3step,0.2567439772104373,0.07558328548066175,0.22188521308590847,0.28971210912723305,0.01,IMPROVED,18,180
+dynamic_3step,dRMST_rel,dynamic_evidence_3step,dynamic_3step,0.09832181965920196,0.055578083445732715,0.07213415916480266,0.12254433645747043,0.02,IMPROVED,18,180
+dynamic_3step_vs_online_static_3step,dPdet,dynamic_3step_vs_online_static_3step,dynamic_3step_vs_online_static_3step,0.11686163340681327,0.0768141838485373,0.08378096539032985,0.15244337508538883,0.01,IMPROVED,18,180
+dynamic_3step_vs_online_static_3step,dRMST_rel,dynamic_3step_vs_online_static_3step,dynamic_3step_vs_online_static_3step,0.05583942249042854,0.04373099878998158,0.0376244508432056,0.07677508191915867,0.02,IMPROVED,18,180

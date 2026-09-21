@@ -1,0 +1,9 @@
+{
+  "completed": true,
+  "completed_at": "2026-09-10T06:55:55.023348+00:00",
+  "stage": "c7-midflight",
+  "experiment_id": "c7-midflight_20260909_155840_581849_989802fd",
+  "config_hash": "989802fd17703a1d691564e2c747fd36b02a93307e474afa97713c215f883841",
+  "git_commit": "712b395",
+  "source_hash": "5ede81cb5815049fe381f461ce5502b4a13d3d3945ab77c4b78242c6d10572b8"
+}

@@ -1,0 +1,9 @@
+{
+  "schema_version": "block-C-v1",
+  "policy": "preexisting_untracked_hashed_baseline",
+  "created_before_scientific_campaigns": true,
+  "allowed": {},
+  "paths": [],
+  "rejected": [],
+  "note": "Anonymous cut: the internal baseline hashed private pre-existing artifacts. None are shipped, so the allowlist is empty."
+}

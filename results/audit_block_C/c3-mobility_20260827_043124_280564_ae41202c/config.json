@@ -1,0 +1,116 @@
+{
+  "schema_version": "block-C-v1",
+  "stage": "c3-mobility",
+  "implementation_version": "revision_C_base@7b52d9149fd5",
+  "git_commit": "7b52d9149fd569229bcf4dbdfab434edfabc2e03",
+  "source_hash": "7821c330697bd81d6d7c78669e14fc4e785ea7c98d4305a8f8d4a52af044ffbd",
+  "block_B_code_commit": "d2eb0adbd780bf76a4e7820ede07de090bf9f15d",
+  "block_B_closure_commit": "df9f0680a10725ab16664d32305f0a8343b7f886",
+  "fix_profile": "revision_B_base",
+  "behavior_profile": "revision_B_base",
+  "belief_model": "evidence",
+  "c0_impl_commit": "7b52d9149fd569229bcf4dbdfab434edfabc2e03",
+  "primary_endpoints": [
+    "P_detect",
+    "RMST"
+  ],
+  "secondary_endpoints": [
+    "L",
+    "revisit_fraction",
+    "exposure_multiplicity",
+    "planner_wall_time"
+  ],
+  "MARGIN_PDET": 0.01,
+  "MARGIN_RMST_REL": 0.02,
+  "alpha": 0.05,
+  "ci_method": "Student-t paired mean CI",
+  "bootstrap": {
+    "cluster": true,
+    "unit": "dataset_mean",
+    "seed": 20260826,
+    "iterations": 10000
+  },
+  "datasets": [
+    1,
+    7,
+    10
+  ],
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51
+  ],
+  "planners": [
+    "online_static_3step",
+    "dynamic_3step"
+  ],
+  "w": 0.5,
+  "p_d": 0.8,
+  "tau": 10000.0,
+  "budget": 200000.0,
+  "label": "confirmatory",
+  "size": "xlarge",
+  "num_drones": 5,
+  "fov_deg": 45.0,
+  "altitude": 80.0,
+  "drone_speed": 5.0,
+  "victim_speed": 0.5,
+  "dt": 1.0,
+  "snapshot_interval": 50,
+  "horizon_policy": "T_common=max(T_i); H_common=T_common+1; path-ended cells keep survival",
+  "seed_policy": {
+    "planning_seed": "literal seed for initial positions and SARSimulation",
+    "victim_seed": "SeedSequence child",
+    "sensor_seed": "SeedSequence child",
+    "failure_seed": "independent SeedSequence child",
+    "condition_key_excludes_planner": true
+  },
+  "condition_key": {
+    "stage": "c3-mobility",
+    "w": 0.5,
+    "p_d": 0.8,
+    "tau": 10000.0
+  },
+  "classification_rule": "classify_paired_endpoints",
+  "tuning_datasets": [],
+  "holdout_datasets": [],
+  "confirmation_datasets": [],
+  "parent_experiment_id": "c2-mismatch_20260826_181638_227156_4f4ff330",
+  "parent_git_commit": "7b52d9149fd569229bcf4dbdfab434edfabc2e03",
+  "parent_source_hash": "7821c330697bd81d6d7c78669e14fc4e785ea7c98d4305a8f8d4a52af044ffbd",
+  "parent_compatibility_status": "exact_identity",
+  "parent_gate": "ROBUST_TO_MODERATE_MISMATCH",
+  "scientific_valid": true,
+  "mobility_models": [
+    "random_walk",
+    "route_following",
+    "lost_person"
+  ],
+  "simulation_victim_model": "none",
+  "evaluation_victim_model": [
+    "random_walk",
+    "route_following",
+    "lost_person"
+  ],
+  "victim_sampling_model": "stationary_victim_cell(P,victim_seed)",
+  "paths_reused_by_model": true,
+  "effective_victim_speed": 0.5,
+  "effective_dt": 1.0,
+  "parallel_unit": [
+    "dataset",
+    "planning_seed"
+  ],
+  "expected_rows": 180,
+  "timestamp": "2026-08-27T04:31:24.280576+00:00",
+  "experiment_id": "c3-mobility_20260827_043124_280564_ae41202c",
+  "jobs": 10,
+  "config_hash": "ae41202c062c1192bd5014d07cc3e7ddd086315bbffcca5260a97b6938aacfd9",
+  "rerun_policy": "completed exact-config campaigns are skipped; --rerun creates a new campaign"
+}

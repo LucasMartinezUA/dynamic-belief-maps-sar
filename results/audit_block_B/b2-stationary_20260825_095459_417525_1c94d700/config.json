@@ -1,0 +1,40 @@
+{
+  "implementation_version": "revision_B@ff544e3dab27",
+  "git_commit": "ff544e3dab270c9412bea847c1119b0311242e63",
+  "source_hash": "80fceafd3b84042efbd5784f9078f942f8b510d681c7d28371b421dc8af8f285",
+  "belief_model": "evidence",
+  "revisit_weight": 0.5,
+  "simulation_num_victims": 0,
+  "evaluation_num_victims": 1,
+  "victim_model": "random_walk",
+  "detection_probability": 0.8,
+  "decay_tau": 10000.0,
+  "budget": 200000.0,
+  "size": "xlarge",
+  "planning_seed": 42,
+  "victim_seed": null,
+  "sensor_seed": null,
+  "stage": "b2-stationary",
+  "design": {
+    "datasets": [
+      1
+    ],
+    "jobs": 1,
+    "base_seed": 42,
+    "runs": 3,
+    "seeds": 10,
+    "w": [
+      0.5
+    ],
+    "simulation_victim_model": "random_walk",
+    "planning_mode": "dynamic_3step",
+    "revisit_weight": 0.5,
+    "evaluation": "stationary",
+    "victim_sampling_model": "matched_prior_stationary_exact"
+  },
+  "victim_sampling_model": "matched_prior_stationary_exact",
+  "simulation_victim_model": "random_walk",
+  "timestamp": "2026-08-25T09:54:59.417536",
+  "experiment_id": "b2-stationary_20260825_095459_417525_1c94d700",
+  "config_hash": "1c94d70086aa398cb6286b4eb8484e7314347e3f262e93d91a2b084fe0c7d088"
+}

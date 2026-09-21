@@ -1,0 +1,9 @@
+{
+  "completed": true,
+  "completed_at": "2026-08-26T17:34:02.036504+00:00",
+  "stage": "c1-sensitivity",
+  "experiment_id": "c1-sensitivity_20260826_073133_703049_c676526b",
+  "config_hash": "c676526b916d560a4651031b0ad6002a640325534681ef2670109fbd500a6bef",
+  "git_commit": "f0684f8459a1f1424f630778b2c606434d0bce08",
+  "source_hash": "27784880a3418d09b46f5afe2a7042757968dd5494a542fdab85e6a06fc60fb2"
+}

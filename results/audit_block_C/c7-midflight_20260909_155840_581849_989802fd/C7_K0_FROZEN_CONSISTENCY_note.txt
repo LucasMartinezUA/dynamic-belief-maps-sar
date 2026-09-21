@@ -1,0 +1,1 @@
+Informational distance audit: C7 uses common grid-aligned positions for every arm (all-C7A internal fairness), so k=0 rows are not expected to reproduce the frozen C5/C6 raw-position values within 1e-12. matched=2/540. Never a gate.

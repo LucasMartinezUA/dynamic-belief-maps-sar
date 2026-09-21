@@ -1,0 +1,239 @@
+{
+  "schema_version": "block-C-v1",
+  "block": "C7",
+  "research_question": "Following an unexpected mid-mission UAV loss, how do continuous online replanning, evidence-guided replanning, and fault-triggered geometric repartitioning differ in their use of the remaining fleet and mission budget?",
+  "resource_interpretation": "C7 controls the total movement resource (200 km), not a fixed mission duration; after failure 4 UAVs may consume the remaining 100 km, so failed missions run longer in clock steps than k=0. Primary robustness endpoint: retention_Pdet; RMST-vs-k=0 (degradation_NRMST) reported with caution; failure-arm pairwise comparisons share 4 survivors and the same remaining budget.",
+  "frozen_config": {
+    "w": 0.5,
+    "p_d": 0.8,
+    "tau": 10000.0,
+    "budget": 200000.0,
+    "size": "xlarge",
+    "num_drones": 5,
+    "fov_deg": 45.0,
+    "altitude": 80.0,
+    "drone_speed": 5.0,
+    "victim_speed": 0.5,
+    "dt": 1.0,
+    "fix_profile": "revision_B_base",
+    "belief_model": "evidence",
+    "init_strategy": "random",
+    "init_radius": 100.0,
+    "simulation_num_victims": 0,
+    "evaluation": "matched_prior_stationary"
+  },
+  "failure": {
+    "k": 1,
+    "failure_fraction": 0.5,
+    "definition": "B_fail=0.5*B_total; trigger at end of the first timestep whose completed fleet movement distance >= B_fail; single event per run; k=2 simultaneous only (C7D)",
+    "identity_rule": "C4 frozen ids for (dataset,seed,k) in DS1/5/10 x 42..51; else SeedSequence([dataset,seed,k,hash(c7-failure-identity)]) choice(5,k,replace=False)",
+    "no_teleport": true,
+    "silence": [
+      "move",
+      "sense",
+      "reserve",
+      "budget"
+    ],
+    "immediate_awareness": true,
+    "not_modeled": [
+      "diagnostics",
+      "communication",
+      "partial loss",
+      "return/repair"
+    ]
+  },
+  "uav_roles": {
+    "failed": "lost: no move, no sensing, no reservations, no budget",
+    "search_inactive": "survivor with no remaining coverage task (hold policy): no movement AND no new exposures after the final observation; assigned by pizza_replan when tasks < survivors after mandatory splitting AND when a pizza_replan survivor finishes its assigned post-fault task (it senses the final waypoint ONCE before hold; no parked repetitions; T19)"
+  },
+  "methods": [
+    "dynamic_evidence_3step",
+    "online_static_3step",
+    "pizza_replan_midflight",
+    "pizza_fixed_midflight",
+    "random_uniform_n8_uncoordinated"
+  ],
+  "c7b": {
+    "prefix": "online_static_3step to B_fail (budget=100000, no failure)",
+    "branches": [
+      "dynamic",
+      "online_static",
+      "pizza_replan",
+      "random"
+    ],
+    "pizza_fixed_excluded_reason": "no coherent pre-fault Pizza path exists after an online_static prefix; pizza_fixed remains an end-to-end (C7A) diagnostic only",
+    "checkpoint": [
+      "prefix_paths",
+      "prefix_observed",
+      "prefix_belief_state",
+      "prefix_time",
+      "prefix_distance"
+    ],
+    "shadow_belief_capture": "the prefix sim's own EvidenceBelief (updated by _update_observations each timestep; online_static plans on the prior anyway); verified by T16 (num_updates == (T_f+1)*num_drones and replay-equivalence)",
+    "endpoint_basis": "prefix history + post-fault branch history (concatenated trajectories); Pdet_at_fault from prefix only (identical across branches)"
+  },
+  "pizza_replan": {
+    "generator": "generate_pizza_zigzag_path(overlap=0.0,path_point_spacing_m=10.0,border_gap_m=0.0)",
+    "state_allowed": [
+      "survivor positions",
+      "valid map",
+      "observed_mask",
+      "geometry params",
+      "FOV"
+    ],
+    "state_prohibited": [
+      "prior",
+      "posterior",
+      "EvidenceBelief",
+      "Bellman",
+      "predictions"
+    ],
+    "tail_trim": "remove fully-observed prefix/suffix waypoints; keep interior covered segments (physical continuity)",
+    "split": "split ONLY when it yields two children >= 20 m each (splittable parent ~40 m; children never below 20 m); when no splittable route remains and tasks < survivors, leftover survivors are search-inactive (no move, no sensing); finish -> final observation -> hold (pending promotion after the sensing block; T19)",
+    "assignment": "Hungarian (rectangular: also chooses which survivors receive a task when tasks < survivors) + deterministic lexicographic tie-break; orientation min-entry (forward/reverse); unassigned survivors search-inactive",
+    "deadhead": "physical transit to entry waypoint; counts fully in budget; sensor on during transit"
+  },
+  "datasets": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    20,
+    25,
+    30
+  ],
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51
+  ],
+  "endpoints": {
+    "primary": [
+      "P_detect",
+      "RMST"
+    ],
+    "secondary": [
+      "L",
+      "revisit_fraction",
+      "exposure_multiplicity",
+      "planner_wall_time",
+      "P_detect_at_Tref",
+      "RMST_at_Tref"
+    ],
+    "robustness": [
+      "retention_Pdet",
+      "degradation_NRMST",
+      "PostFault_PdetGain",
+      "ConditionalPostFaultPdet"
+    ]
+  },
+  "horizon_rule": "single frozen rule: within one job (dataset, seed, condition), every row (failure arms, k=0 arms, C7B prefix and branches) shares T_common = max(T) over the job rows; all RMST values in any paired comparison are evaluated at that same T_common (H_common = T_common+1); NRMST = RMST/H_common; dRMST_rel = (RMST_control - RMST_method)/H_common, positive = favorable to the method (lower RMST is better; same sign convention as dPdet); enforced by automated check common_horizon_ok",
+  "contrasts": {
+    "c7a": {
+      "P1": "dynamic - pizza_replan_midflight",
+      "P2": "online_static - pizza_replan_midflight",
+      "P3": "dynamic - online_static",
+      "secondary": [
+        "pizza_replan_midflight - pizza_fixed_midflight",
+        "dynamic - random",
+        "online_static - random",
+        "pizza_replan_midflight - random"
+      ]
+    },
+    "c7b": {
+      "P1B": "dynamic - pizza_replan_midflight",
+      "P2B": "online_static - pizza_replan_midflight",
+      "P3B": "dynamic - online_static"
+    }
+  },
+  "endpoint_margins": {
+    "dPdet": 0.01,
+    "dRMST_rel": 0.02,
+    "dPostFaultGain": 0.01,
+    "dConditionalGain": 0.01,
+    "dPdet_Tref": 0.01,
+    "dRMST_rel_Tref": 0.02
+  },
+  "baselines": {
+    "policy": "ALL no-failure (k=0) baselines are computed within C7 from the same frozen C7 implementation: dynamic, online_static, random, pizza (shared by pizza_replan and pizza_fixed); frozen C5/C6 rows are used exclusively as an informational distance audit (C7_K0_FROZEN_CONSISTENCY.json), never as metric inputs and never as a gate"
+  },
+  "statistics": {
+    "method": "per-dataset paired means -> cluster bootstrap (seed 20260826, 10000 iters) over dataset means"
+  },
+  "sensitivity": {
+    "timing_fractions": [
+      0.25,
+      0.5,
+      0.75
+    ],
+    "timing_scope": [
+      "1",
+      "5",
+      "10"
+    ],
+    "severity_k": 2,
+    "severity_scope": [
+      "1",
+      "5",
+      "10"
+    ],
+    "status": {
+      "c7c": "secondary",
+      "c7d": "supplementary, executed last and only if c7-midflight/c7-state-matched/c7-timing technical gates are green"
+    }
+  },
+  "scenario_mapping": {
+    "C7_SYSTEM_PERFORMANCE_UNDER_MIDMISSION_LOSS": "C7A P1: cls(dPdet)==IMPROVED and cls(dRMST_rel) not in {WORSENED}",
+    "C7_ONLINE_PERFORMANCE_UNDER_MIDMISSION_LOSS": "C7A P2: cls(dPdet)==IMPROVED and cls(dRMST_rel) not in {WORSENED}",
+    "C7_EVIDENCE_PERFORMANCE_UNDER_MIDMISSION_LOSS": "C7A P3: cls(dPdet)==IMPROVED and cls(dRMST_rel) not in {WORSENED}",
+    "C7_SYSTEM_RECOVERY_ADVANTAGE": "C7B P1B: cls(dPostFaultGain)==IMPROVED and cls(dPdet) not in {WORSENED}",
+    "C7_ONLINE_REPLANNING_RECOVERY_ADVANTAGE": "C7B P2B: cls(dPostFaultGain)==IMPROVED and cls(dPdet) not in {WORSENED}",
+    "C7_EVIDENCE_RECOVERY_ADVANTAGE": "C7B P3B: cls(dPostFaultGain)==IMPROVED and cls(dRMST_rel) not in {WORSENED} and mean(CondGain_dyn)-mean(CondGain_os)>0",
+    "C7_NO_DIFFERENTIAL_EVIDENCE_RECOVERY": "C7B P3B: cls(dPostFaultGain) in {EQUIVALENT, INCONCLUSIVE}",
+    "C7_GEOMETRIC_RECOVERY_COMPETITIVE": "C7B P2B: cls(dPostFaultGain) != IMPROVED (includes WORSENED: pizza significantly better)",
+    "C7_BOUNDARY": "sign(global mean C7A P1.dPdet at 0.25) != sign at 0.75 OR >= 2/3 C7C datasets flip per-dataset sign (DS1/5/10)"
+  },
+  "prohibited_wording": [
+    "fault tolerance",
+    "fault-tolerant system",
+    "EvidenceBelief provides fault tolerance",
+    "autonomous fault recovery",
+    "robustness is caused by EvidenceBelief"
+  ],
+  "position_policy": "ALL C7 arms (failure and k=0, greedy/random and pizza) start from the SAME grid-aligned initial positions (frozen C4 pattern), so within-trial positions are identical across every method (fairness checks same_positions_across_failure_arms and same_positions_as_own_k0, both required). The legacy C5/C6 k=0 rows used raw positions, so the C7 k=0 rows are NOT expected to reproduce them within 1e-12: the C7_K0_FROZEN_CONSISTENCY audit is therefore informational (recorded, never a gate).",
+  "retention_definitions": {
+    "retention_Pdet": "P_detect_failure / P_detect_no_failure (from the C7 k=0 row of the same trial; 'none' if baseline P_detect <= 0)",
+    "degradation_NRMST": "NRMST_failure - NRMST_no_failure (same-job horizon via the common-horizon rule); reported with caution (budget-vs-time note)"
+  },
+  "time_matched": {
+    "rationale": "budget-matched view alone may not discriminate: with a fixed 200 km movement budget the 4 survivors can consume the same remaining distance as the full fleet, so retention tends to ~1; T_ref adds the time-matched view: how much performance remains within the operational time of a nominal 5-UAV mission",
+    "T_ref_seconds": 8000,
+    "derivation": "5 UAVs x 5 m/s consume the 200 km budget in ~8000 s at nominal; a single COMMON PHYSICAL horizon for every method (not per-method k=0 horizons)",
+    "endpoints": [
+      "P_detect_at_Tref",
+      "RMST_at_Tref",
+      "NRMST_at_Tref"
+    ],
+    "evaluation": "per-drone paths truncated to positions [0..T_ref]; RMST evaluated at the fixed horizon T_ref; secondary (primary endpoints and scenario flags unchanged)",
+    "no_new_simulations": true
+  },
+  "t5_scope": "T5 regression: the pizza_replan replan at mission start (zero coverage) is compared against the REAL frozen C4 pipeline (audit_block_c._pizza_paths): identical sector multiset, and aggregate coverage equal within documented sector-entry phase noise (<=1e-4 P_detect, <=0.01 RMST; the C7 and C4 assignment rules differ by design, so per-drone paths may permute); plus an exact element-wise regression at identical assignment"
+}

@@ -1,0 +1,9 @@
+{
+  "completed": true,
+  "completed_at": "2026-08-26T20:17:10.933591+00:00",
+  "stage": "c2-mismatch",
+  "experiment_id": "c2-mismatch_20260826_181638_227156_4f4ff330",
+  "config_hash": "4f4ff3304f262cb45b129b36796bb1faf7ceb8ecd717c2fd358f23f3a31673e0",
+  "git_commit": "7b52d9149fd569229bcf4dbdfab434edfabc2e03",
+  "source_hash": "7821c330697bd81d6d7c78669e14fc4e785ea7c98d4305a8f8d4a52af044ffbd"
+}

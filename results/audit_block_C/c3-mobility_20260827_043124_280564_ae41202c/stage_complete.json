@@ -1,0 +1,9 @@
+{
+  "completed": true,
+  "completed_at": "2026-08-27T06:33:39.026258+00:00",
+  "stage": "c3-mobility",
+  "experiment_id": "c3-mobility_20260827_043124_280564_ae41202c",
+  "config_hash": "ae41202c062c1192bd5014d07cc3e7ddd086315bbffcca5260a97b6938aacfd9",
+  "git_commit": "7b52d9149fd569229bcf4dbdfab434edfabc2e03",
+  "source_hash": "7821c330697bd81d6d7c78669e14fc4e785ea7c98d4305a8f8d4a52af044ffbd"
+}

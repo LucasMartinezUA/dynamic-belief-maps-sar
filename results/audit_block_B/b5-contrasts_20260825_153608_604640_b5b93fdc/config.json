@@ -1,0 +1,60 @@
+{
+  "implementation_version": "revision_B@ff544e3dab27",
+  "git_commit": "ff544e3dab270c9412bea847c1119b0311242e63",
+  "source_hash": "cef0d7e99cf98289cf781ea358600304c52099759ac7cef6c0a3cc8b44b6bdc2",
+  "belief_model": "evidence",
+  "revisit_weight": 0.5,
+  "simulation_num_victims": 0,
+  "evaluation_num_victims": 1,
+  "victim_model": "random_walk",
+  "detection_probability": 0.8,
+  "decay_tau": 10000.0,
+  "budget": 200000.0,
+  "size": "xlarge",
+  "planning_seed": 42,
+  "victim_seed": null,
+  "sensor_seed": null,
+  "stage": "b5-contrasts",
+  "design": {
+    "datasets": [
+      1,
+      5,
+      7,
+      9,
+      10,
+      12
+    ],
+    "jobs": 10,
+    "base_seed": 42,
+    "runs": 3,
+    "seeds": 10,
+    "w": [
+      0.5
+    ],
+    "simulation_victim_model": "random_walk",
+    "modes": [
+      "online_static",
+      "online_static_3step",
+      "dynamic",
+      "dynamic_3step"
+    ],
+    "seeds_used": [
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51
+    ],
+    "victim_sampling_model": "none_planning_only"
+  },
+  "victim_sampling_model": "none_planning_only",
+  "simulation_victim_model": "random_walk",
+  "timestamp": "2026-08-25T15:36:08.604651",
+  "experiment_id": "b5-contrasts_20260825_153608_604640_b5b93fdc",
+  "config_hash": "b5b93fdc655e4ae53a3edeb7713100a5719263d98438f703238f4438fc509f05"
+}

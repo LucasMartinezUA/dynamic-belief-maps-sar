@@ -1,0 +1,10 @@
+# Testing requirements
+pytest>=7.0.0
+pytest-cov>=4.0.0
+pytest-mock>=3.10.0
+
+# Main dependencies (if not already in main requirements.txt)
+numpy>=1.21.0
+geopandas>=0.12.0
+shapely>=2.0.0
+scipy>=1.9.0

@@ -1,0 +1,10 @@
+{
+  "schema_version": "block-C-v1",
+  "c0_impl_commit": "03c6abe7809f8d9df90ace793bd4cc93f18119b6",
+  "implementation_version": "revision_C_base@03c6abe7809f",
+  "block_B_code_commit": "d2eb0adbd780bf76a4e7820ede07de090bf9f15d",
+  "block_B_closure_commit": "df9f0680a10725ab16664d32305f0a8343b7f886",
+  "fix_profile": "revision_B_base",
+  "behavior_profile": "revision_B_base",
+  "belief_model": "evidence"
+}

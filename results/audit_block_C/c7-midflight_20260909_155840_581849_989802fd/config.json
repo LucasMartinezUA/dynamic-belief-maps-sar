@@ -1,0 +1,132 @@
+{
+  "schema_version": "block-C-v1",
+  "stage": "c7-midflight",
+  "implementation_version": "revision_C_base@712b395",
+  "git_commit": "712b395",
+  "source_hash": "5ede81cb5815049fe381f461ce5502b4a13d3d3945ab77c4b78242c6d10572b8",
+  "block_B_code_commit": "d2eb0adbd780bf76a4e7820ede07de090bf9f15d",
+  "block_B_closure_commit": "df9f0680a10725ab16664d32305f0a8343b7f886",
+  "fix_profile": "revision_B_base",
+  "behavior_profile": "revision_B_base",
+  "belief_model": "evidence",
+  "c0_impl_commit": "03c6abe7809f8d9df90ace793bd4cc93f18119b6",
+  "primary_endpoints": [
+    "P_detect",
+    "RMST"
+  ],
+  "secondary_endpoints": [
+    "L",
+    "revisit_fraction",
+    "exposure_multiplicity",
+    "planner_wall_time"
+  ],
+  "MARGIN_PDET": 0.01,
+  "MARGIN_RMST_REL": 0.02,
+  "alpha": 0.05,
+  "ci_method": "Student-t paired mean CI",
+  "bootstrap": {
+    "cluster": true,
+    "unit": "dataset_mean",
+    "seed": 20260826,
+    "iterations": 10000
+  },
+  "datasets": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    20,
+    25,
+    30
+  ],
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51
+  ],
+  "planners": [
+    "online_static_3step",
+    "dynamic_3step"
+  ],
+  "w": 0.5,
+  "p_d": 0.8,
+  "tau": 10000.0,
+  "budget": 200000.0,
+  "label": "confirmatory",
+  "size": "xlarge",
+  "num_drones": 5,
+  "fov_deg": 45.0,
+  "altitude": 80.0,
+  "drone_speed": 5.0,
+  "victim_speed": 0.5,
+  "dt": 1.0,
+  "snapshot_interval": 50,
+  "horizon_policy": "T_common=max(T_i); H_common=T_common+1; path-ended cells keep survival",
+  "seed_policy": {
+    "planning_seed": "literal seed for initial positions and SARSimulation",
+    "victim_seed": "SeedSequence child",
+    "sensor_seed": "SeedSequence child",
+    "failure_seed": "independent SeedSequence child",
+    "condition_key_excludes_planner": true
+  },
+  "condition_key": {
+    "stage": "c7-midflight",
+    "fraction": 0.5,
+    "k": 1
+  },
+  "classification_rule": "classify_paired_endpoints",
+  "tuning_datasets": [],
+  "holdout_datasets": [],
+  "confirmation_datasets": [],
+  "protocol_schema": "block-C-v1",
+  "parent_experiment_ids": {
+    "c5": "c5-generalization_20260827_181139_043334_662411fc",
+    "c6": "c6-random_20260831_182014_803486_5cf558a2",
+    "c4": "c4-attrition_20260827_075624_501873_327229d1"
+  },
+  "scientific_valid": true,
+  "failure": {
+    "k": 1,
+    "fraction": 0.5,
+    "identity_rule": "C4 frozen for DS1/5/10 x 42..51 (k<=2); else SeedSequence-derived"
+  },
+  "methods": [
+    "dynamic_evidence_3step",
+    "online_static_3step",
+    "pizza_replan_midflight",
+    "pizza_fixed_midflight",
+    "random_uniform_n8_uncoordinated"
+  ],
+  "c7b_branches": [
+    "dynamic_evidence_3step",
+    "online_static_3step",
+    "pizza_replan_midflight",
+    "random_uniform_n8_uncoordinated"
+  ],
+  "expected_rows": 1620,
+  "horizon_rule": "single frozen rule: within one job (dataset, planning_seed, condition) every row shares T_common = max(T); RMST and NRMST are evaluated at that T_common (common_horizon_ok machine check)",
+  "resource_interpretation": "C7 controls the total movement resource (200 km), not a fixed mission duration; after failure 4 UAVs may consume the remaining 100 km. Primary robustness endpoint: retention_Pdet; degradation_NRMST reported with caution.",
+  "timestamp": "2026-09-09T15:58:40.581863+00:00",
+  "experiment_id": "c7-midflight_20260909_155840_581849_989802fd",
+  "jobs": 12,
+  "config_hash": "989802fd17703a1d691564e2c747fd36b02a93307e474afa97713c215f883841",
+  "rerun_policy": "completed exact-config campaigns are skipped; --rerun creates a new campaign"
+}

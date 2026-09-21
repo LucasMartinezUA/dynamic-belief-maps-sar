@@ -1,0 +1,166 @@
+{
+  "schema_version": "block-C-v1",
+  "stage": "c1-sensitivity",
+  "implementation_version": "revision_C_base@f0684f8459a1",
+  "git_commit": "f0684f8459a1f1424f630778b2c606434d0bce08",
+  "source_hash": "27784880a3418d09b46f5afe2a7042757968dd5494a542fdab85e6a06fc60fb2",
+  "block_B_code_commit": "d2eb0adbd780bf76a4e7820ede07de090bf9f15d",
+  "block_B_closure_commit": "df9f0680a10725ab16664d32305f0a8343b7f886",
+  "fix_profile": "revision_B_base",
+  "behavior_profile": "revision_B_base",
+  "belief_model": "evidence",
+  "c0_impl_commit": "f0684f8459a1f1424f630778b2c606434d0bce08",
+  "primary_endpoints": [
+    "P_detect",
+    "RMST"
+  ],
+  "secondary_endpoints": [
+    "L",
+    "revisit_fraction",
+    "exposure_multiplicity",
+    "planner_wall_time"
+  ],
+  "MARGIN_PDET": 0.01,
+  "MARGIN_RMST_REL": 0.02,
+  "alpha": 0.05,
+  "ci_method": "Student-t paired mean CI",
+  "bootstrap": {
+    "cluster": true,
+    "unit": "dataset_mean",
+    "seed": 20260826,
+    "iterations": 10000
+  },
+  "datasets": [
+    1,
+    7,
+    10
+  ],
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "planners": [
+    "online_static_3step",
+    "dynamic_3step"
+  ],
+  "w": 0.5,
+  "p_d": 0.8,
+  "tau": 10000.0,
+  "budget": 200000.0,
+  "label": "sensitivity",
+  "size": "xlarge",
+  "num_drones": 5,
+  "fov_deg": 45.0,
+  "altitude": 80.0,
+  "drone_speed": 5.0,
+  "victim_speed": 0.5,
+  "dt": 1.0,
+  "snapshot_interval": 50,
+  "horizon_policy": "T_common=max(T_i); H_common=T_common+1; path-ended cells keep survival",
+  "seed_policy": {
+    "planning_seed": "literal seed for initial positions and SARSimulation",
+    "victim_seed": "SeedSequence child",
+    "sensor_seed": "SeedSequence child",
+    "failure_seed": "independent SeedSequence child",
+    "condition_key_excludes_planner": true
+  },
+  "condition_key": {
+    "stage": "c1-sensitivity",
+    "evaluation": "stationary matched-prior"
+  },
+  "classification_rule": "classify_paired_endpoints",
+  "tuning_datasets": [],
+  "holdout_datasets": [],
+  "confirmation_datasets": [
+    1,
+    7,
+    10
+  ],
+  "scientific_valid": true,
+  "simulation_victim_model": "none",
+  "evaluation_victim_model": "stationary",
+  "victim_sampling_model": "matched_prior_exact",
+  "conditions": [
+    {
+      "condition_id": "w_0",
+      "curve": "w",
+      "w": 0.0,
+      "p_d": 0.8,
+      "tau": 10000.0
+    },
+    {
+      "condition_id": "w_025",
+      "curve": "w",
+      "w": 0.25,
+      "p_d": 0.8,
+      "tau": 10000.0
+    },
+    {
+      "condition_id": "nominal",
+      "curve": "nominal",
+      "w": 0.5,
+      "p_d": 0.8,
+      "tau": 10000.0
+    },
+    {
+      "condition_id": "w_075",
+      "curve": "w",
+      "w": 0.75,
+      "p_d": 0.8,
+      "tau": 10000.0
+    },
+    {
+      "condition_id": "w_1",
+      "curve": "w",
+      "w": 1.0,
+      "p_d": 0.8,
+      "tau": 10000.0
+    },
+    {
+      "condition_id": "pd_060",
+      "curve": "p_d",
+      "w": 0.5,
+      "p_d": 0.6,
+      "tau": 10000.0
+    },
+    {
+      "condition_id": "pd_095",
+      "curve": "p_d",
+      "w": 0.5,
+      "p_d": 0.95,
+      "tau": 10000.0
+    },
+    {
+      "condition_id": "tau_2000",
+      "curve": "tau",
+      "w": 0.5,
+      "p_d": 0.8,
+      "tau": 2000.0
+    },
+    {
+      "condition_id": "tau_32000",
+      "curve": "tau",
+      "w": 0.5,
+      "p_d": 0.8,
+      "tau": 32000.0
+    },
+    {
+      "condition_id": "tau_128000",
+      "curve": "tau",
+      "w": 0.5,
+      "p_d": 0.8,
+      "tau": 128000.0
+    }
+  ],
+  "H_ref": 8000.0,
+  "nominal_condition_id": "nominal",
+  "expected_rows": 300,
+  "timestamp": "2026-08-26T07:31:33.703060+00:00",
+  "experiment_id": "c1-sensitivity_20260826_073133_703049_c676526b",
+  "jobs": 10,
+  "config_hash": "c676526b916d560a4651031b0ad6002a640325534681ef2670109fbd500a6bef",
+  "rerun_policy": "completed exact-config campaigns are skipped; --rerun creates a new campaign"
+}

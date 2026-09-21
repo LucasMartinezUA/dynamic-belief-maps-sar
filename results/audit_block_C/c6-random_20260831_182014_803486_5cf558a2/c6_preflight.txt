@@ -1,0 +1,89 @@
+C6 preflight
+============
+
+timestamp: 2026-08-31T18:20:16.988075+00:00
+
+## Frozen random policy
+{
+  "name": "random_uniform_n8_uncoordinated",
+  "action_space": "valid_N8",
+  "include_center": false,
+  "target_deconfliction": false,
+  "uses_prior": false,
+  "uses_belief": false,
+  "uses_observed_mask": false,
+  "uses_revisit_weight": false,
+  "uses_other_uav_targets": false,
+  "memoryless": true,
+  "rule": "A_t^i = valid N8 neighbours of the current cell; a_t^i ~ Uniform(A_t^i) per timestep per UAV; no utility map, no prior/belief/observed-mask access, no revisit score, no other-UAV targets, no cycle reservation, no own history (memoryless); physical validity rules unchanged; target deconfliction OFF (two UAVs may keep the same target within a cycle)",
+  "no_valid_neighbour_policy": "physically impossible in the real domains; if it occurs the campaign aborts (random_hold_events must be 0); the code holds the cell only as a defensive safeguard, never as a designed action"
+}
+
+## Parent campaigns and trial keys
+- stationary: c5-generalization_20260827_181139_043334_662411fc (180 keys, imported)
+- attrition:  c4-attrition_20260827_075624_501873_327229d1 (30 keys, imported)
+
+## Prerequisite checks
+[PASS] parent_c5_config_hash_matches_closure_manifest — manifest=662411fc2c56d0c02ce05c695ea52935ceb8d74da8d3bb51759e41a06bd0b419 config=662411fc2c56d0c02ce05c695ea52935ceb8d74da8d3bb51759e41a06bd0b419
+[PASS] parent_c4_config_hash_matches_closure_manifest — manifest=327229d1bf70f8e05e383a7a64e8207b7bcbbc0877cfd63b067cd569f1a2c3bf config=327229d1bf70f8e05e383a7a64e8207b7bcbbc0877cfd63b067cd569f1a2c3bf
+[PASS] parent_c5_gate_GENERALIZES — gate=GENERALIZES
+[PASS] parent_c4_gate_recorded — gate=NO_DIFFERENTIAL_ADVANTAGE
+[PASS] c5_nominal_w — w=0.5
+[PASS] c5_nominal_p_d — p_d=0.8
+[PASS] c5_nominal_tau — tau=10000.0
+[PASS] c5_nominal_budget — budget=200000.0
+[PASS] c5_nominal_size_xlarge — size=xlarge
+[PASS] c5_nominal_fov — fov=45.0
+[PASS] c5_nominal_dt — dt=1.0
+[PASS] c5_nominal_speed — speed=5.0
+[PASS] c4_nominal_w — w=0.5
+[PASS] c4_nominal_p_d — p_d=0.8
+[PASS] c4_nominal_tau — tau=10000.0
+[PASS] c4_nominal_budget — budget=200000.0
+[PASS] c4_nominal_size_xlarge — size=xlarge
+[PASS] c4_nominal_fov — fov=45.0
+[PASS] c4_nominal_dt — dt=1.0
+[PASS] c4_nominal_speed — speed=5.0
+[PASS] effective_fov_deg — value=45.0 c5=45.0 c4=45.0
+[PASS] effective_drone_speed — value=5.0 c5=5.0 c4=5.0
+[PASS] effective_dt — value=1.0 c5=1.0 c4=1.0
+[PASS] effective_size — value=xlarge c5=xlarge c4=xlarge
+[PASS] effective_p_d — value=0.8 c5=0.8 c4=0.8
+[PASS] effective_w — value=0.5 c5=0.5 c4=0.5
+[PASS] effective_tau — value=10000.0 c5=10000.0 c4=10000.0
+[PASS] effective_budget — value=200000.0 c5=200000.0 c4=200000.0
+[PASS] c5_row_count — rows=360
+[PASS] c5_no_duplicate_trials — max_reps=1
+[PASS] c4_row_count — rows=360
+[PASS] c4_no_duplicate_trials — max_reps=1
+[PASS] c5_arms_all_present — arms=['dynamic_3step', 'online_static_3step']
+[PASS] c4_arms_all_present — arms=['dynamic_evidence_3step', 'online_static_3step', 'pizza_repartition']
+[PASS] c4_termination_all_budget_exhausted — reasons=['budget_exhausted']
+[PASS] c4_attrition_budget_per_active_uav — per_uav=40000.0 (k0=200km -> k3=80km)
+[PASS] c4_attrition_levels — levels=[0, 1, 2, 3]
+[PASS] c5_trial_keys_imported — used=180 parent=180 (drawn from parent rows)
+[PASS] c4_trial_keys_imported — used=30 parent=30 (drawn from parent rows)
+[PASS] c5_keyset_exact — c6=180 parent=180 (exact import)
+[PASS] c4_keyset_exact — c6=30 parent=30 (exact import)
+[PASS] no_hardcoded_seed_range — jobs are built from parent rows; --seeds/--datasets are optional filters only
+
+## Policy tests
+[PASS] Reproducibility — identical_trajectories=True
+[PASS] Policy-seed sensitivity — trajectories_differ=True
+[PASS] N8 validity — invalid_actions=0 hold_events=0
+[PASS] Uniform support — valid=8 selected=8 unselected=[]
+[PASS] Prior independence — identical_decisions=True
+[PASS] Belief independence — decisions_unchanged_under_posterior_patch=True
+[PASS] Observation independence — decisions_unchanged_under_history_mutation=True
+[PASS] No deconfliction — duplicate_target_cycles=44 conflicts=0 both_decisions_kept=True
+[PASS] No cross-UAV information — uav1_decisions_identical=True
+[PASS] RNG survivor invariance — survivor_streams_unchanged=True
+[PASS] Exposure multiplicity — n_c=3 (expected 3 independent exposures)
+[PASS] Simultaneous sensing — n_c=4 (2 UAVs x 2 steps = 4)
+[PASS] Unique L — L_unique_unchanged=True (L1=0.003101 L2=0.003101)
+[PASS] Budget identity — total_distance=3000.0 budget=3000 (identical accounting to other planners)
+[PASS] Termination identity — termination_reason=budget_exhausted done=True (same budget rule as the other planners; no Random-specific early stop)
+[PASS] Trace reconstruction — P_detect_reconstruct=True RMST_reconstruct=True L=0.008062
+[PASS] No map access (structural) — structural proof: no planner-map entry point was reached
+
+## PREREQUISITES OK

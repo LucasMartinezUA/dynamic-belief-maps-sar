@@ -1,0 +1,16 @@
+{
+  "schema_version": "block-C-v1",
+  "stage": "c7-state-matched",
+  "experiment_id": "c7-state-matched_20260910_070544_572098_9ae47248",
+  "parent": "c7-midflight_20260909_155840_581849_989802fd",
+  "rows": 900,
+  "curve_rows": 136261,
+  "checks": {
+    "prefix_consistent": true,
+    "at_fault_identical": true,
+    "common_horizon_ok": true
+  },
+  "gate": {
+    "C7_TECHNICAL_GREEN": true
+  }
+}

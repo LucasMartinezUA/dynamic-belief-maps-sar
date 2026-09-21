@@ -1,0 +1,22 @@
+{
+  "schema_version": "block-C-v1",
+  "stage": "c7-midflight",
+  "experiment_id": "c7-midflight_20260909_155840_581849_989802fd",
+  "created_at": "2026-09-09T15:58:40.581863+00:00",
+  "parents": {
+    "c5": "c5-generalization_20260827_181139_043334_662411fc",
+    "c6": "c6-random_20260831_182014_803486_5cf558a2",
+    "c4": "c4-attrition_20260827_075624_501873_327229d1"
+  },
+  "rows": 1620,
+  "curve_rows": 167345,
+  "checks": {
+    "unit_tests_pass": true,
+    "fairness_valid": true,
+    "common_horizon_ok": true,
+    "k0_frozen_consistency_all_matched": false
+  },
+  "gate": {
+    "C7_TECHNICAL_GREEN": true
+  }
+}

@@ -1,0 +1,5 @@
+planning_mode,n,mean_dL,mean_abs_dL,mean_tv_final,mean_abs_tv_max
+dynamic,9,0.000441,0.004356,0.026883,0.027251
+dynamic_3step,9,-0.003491,0.006253,0.041761,0.041761
+online_static,9,0.0,0.0,0.001885,0.001895
+online_static_3step,9,0.0,0.0,0.006263,0.006279

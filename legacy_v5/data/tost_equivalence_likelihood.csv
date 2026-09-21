@@ -1,0 +1,11 @@
+mode_a,mode_b,cliff_delta,ci90_lo,ci90_hi,mesoi,equivalent
+static,pizza,-0.08,-0.24,0.1,0.147,False
+dynamic,pizza,-0.58,-0.72,-0.44,0.147,False
+dynamic,static,-0.37,-0.48401,-0.24359,0.147,False
+static_3step,pizza,0.78,0.68,0.88,0.147,False
+static_3step,static,0.6892,0.6008,0.7792,0.147,False
+static_3step,dynamic,0.8712,0.80839,0.9248,0.147,False
+dynamic_3step,pizza,1.0,1.0,1.0,0.147,False
+dynamic_3step,static,0.9166,0.87739,0.9512,0.147,False
+dynamic_3step,dynamic,0.9878,0.97699,0.9958,0.147,False
+dynamic_3step,static_3step,0.3968,0.27658,0.50948,0.147,False

@@ -1,0 +1,20 @@
+{
+  "implementation_version": "revision_B@ff544e3dab27",
+  "git_commit": "ff544e3dab270c9412bea847c1119b0311242e63",
+  "belief_model": "evidence",
+  "revisit_weight": 0.5,
+  "simulation_num_victims": 0,
+  "evaluation_num_victims": 1,
+  "victim_model": "random_walk",
+  "detection_probability": 0.8,
+  "decay_tau": 10000.0,
+  "budget": 200000.0,
+  "size": "xlarge",
+  "planning_seed": 42,
+  "victim_seed": null,
+  "sensor_seed": null,
+  "stage": "belief-tests",
+  "timestamp": "2026-08-24T21:46:21",
+  "experiment_id": "belief-tests_20260824_214621_4198917f",
+  "config_hash": "4198917fa08542e71e8f837fe261d2e45f80a3ff0c1c1d78eb2d0d67d6cf55e1"
+}

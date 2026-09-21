@@ -1,0 +1,9 @@
+{
+  "completed": true,
+  "completed_at": "2026-08-28T10:49:21.352717+00:00",
+  "stage": "c5-generalization",
+  "experiment_id": "c5-generalization_20260827_181139_043334_662411fc",
+  "config_hash": "662411fc2c56d0c02ce05c695ea52935ceb8d74da8d3bb51759e41a06bd0b419",
+  "git_commit": "2ce3a901fecb5ddde502d0a5eeffb8f48d73c5fd",
+  "source_hash": "fab97b80b871eeeac68aa1d75a33173cb368895f3e96803690e3cbc0acb1147d"
+}

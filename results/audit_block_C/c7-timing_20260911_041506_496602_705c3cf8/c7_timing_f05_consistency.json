@@ -1,0 +1,366 @@
+{
+  "checked": 150,
+  "mismatches": [
+    {
+      "dataset": 1,
+      "planning_seed": 42,
+      "method": "pizza_replan_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 1,
+      "planning_seed": 42,
+      "method": "pizza_fixed_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 1,
+      "planning_seed": 43,
+      "method": "pizza_replan_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 1,
+      "planning_seed": 43,
+      "method": "pizza_fixed_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 1,
+      "planning_seed": 44,
+      "method": "pizza_replan_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 1,
+      "planning_seed": 44,
+      "method": "pizza_fixed_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 1,
+      "planning_seed": 45,
+      "method": "pizza_replan_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 1,
+      "planning_seed": 45,
+      "method": "pizza_fixed_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 1,
+      "planning_seed": 46,
+      "method": "pizza_replan_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 1,
+      "planning_seed": 46,
+      "method": "pizza_fixed_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 1,
+      "planning_seed": 47,
+      "method": "pizza_replan_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 1,
+      "planning_seed": 47,
+      "method": "pizza_fixed_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 1,
+      "planning_seed": 48,
+      "method": "pizza_replan_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 1,
+      "planning_seed": 48,
+      "method": "pizza_fixed_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 1,
+      "planning_seed": 49,
+      "method": "pizza_replan_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 1,
+      "planning_seed": 49,
+      "method": "pizza_fixed_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 1,
+      "planning_seed": 50,
+      "method": "pizza_replan_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 1,
+      "planning_seed": 50,
+      "method": "pizza_fixed_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 1,
+      "planning_seed": 51,
+      "method": "pizza_replan_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 1,
+      "planning_seed": 51,
+      "method": "pizza_fixed_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 5,
+      "planning_seed": 42,
+      "method": "pizza_replan_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 5,
+      "planning_seed": 42,
+      "method": "pizza_fixed_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 5,
+      "planning_seed": 43,
+      "method": "pizza_replan_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 5,
+      "planning_seed": 43,
+      "method": "pizza_fixed_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 5,
+      "planning_seed": 44,
+      "method": "pizza_replan_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 5,
+      "planning_seed": 44,
+      "method": "pizza_fixed_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 5,
+      "planning_seed": 45,
+      "method": "pizza_replan_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 5,
+      "planning_seed": 45,
+      "method": "pizza_fixed_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 5,
+      "planning_seed": 46,
+      "method": "pizza_replan_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 5,
+      "planning_seed": 46,
+      "method": "pizza_fixed_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 5,
+      "planning_seed": 47,
+      "method": "pizza_replan_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 5,
+      "planning_seed": 47,
+      "method": "pizza_fixed_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 5,
+      "planning_seed": 48,
+      "method": "pizza_replan_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 5,
+      "planning_seed": 48,
+      "method": "pizza_fixed_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 5,
+      "planning_seed": 49,
+      "method": "pizza_replan_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 5,
+      "planning_seed": 49,
+      "method": "pizza_fixed_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 5,
+      "planning_seed": 50,
+      "method": "pizza_replan_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 5,
+      "planning_seed": 50,
+      "method": "pizza_fixed_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 5,
+      "planning_seed": 51,
+      "method": "pizza_replan_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 5,
+      "planning_seed": 51,
+      "method": "pizza_fixed_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 10,
+      "planning_seed": 42,
+      "method": "pizza_replan_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 10,
+      "planning_seed": 42,
+      "method": "pizza_fixed_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 10,
+      "planning_seed": 43,
+      "method": "pizza_replan_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 10,
+      "planning_seed": 43,
+      "method": "pizza_fixed_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 10,
+      "planning_seed": 44,
+      "method": "pizza_replan_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 10,
+      "planning_seed": 44,
+      "method": "pizza_fixed_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 10,
+      "planning_seed": 45,
+      "method": "pizza_replan_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 10,
+      "planning_seed": 45,
+      "method": "pizza_fixed_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 10,
+      "planning_seed": 46,
+      "method": "pizza_replan_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 10,
+      "planning_seed": 46,
+      "method": "pizza_fixed_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 10,
+      "planning_seed": 47,
+      "method": "pizza_replan_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 10,
+      "planning_seed": 47,
+      "method": "pizza_fixed_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 10,
+      "planning_seed": 48,
+      "method": "pizza_replan_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 10,
+      "planning_seed": 48,
+      "method": "pizza_fixed_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 10,
+      "planning_seed": 49,
+      "method": "pizza_replan_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 10,
+      "planning_seed": 49,
+      "method": "pizza_fixed_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 10,
+      "planning_seed": 50,
+      "method": "pizza_replan_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 10,
+      "planning_seed": 50,
+      "method": "pizza_fixed_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 10,
+      "planning_seed": 51,
+      "method": "pizza_replan_midflight",
+      "reason": "value_mismatch"
+    },
+    {
+      "dataset": 10,
+      "planning_seed": 51,
+      "method": "pizza_fixed_midflight",
+      "reason": "value_mismatch"
+    }
+  ],
+  "consistent": false
+}

@@ -1,0 +1,58 @@
+{
+  "implementation_version": "revision_B@ff544e3dab27",
+  "git_commit": "ff544e3dab270c9412bea847c1119b0311242e63",
+  "source_hash": "cef0d7e99cf98289cf781ea358600304c52099759ac7cef6c0a3cc8b44b6bdc2",
+  "belief_model": "evidence",
+  "revisit_weight": 0.5,
+  "simulation_num_victims": 0,
+  "evaluation_num_victims": 1,
+  "victim_model": "random_walk",
+  "detection_probability": 0.8,
+  "decay_tau": 10000.0,
+  "budget": 200000.0,
+  "size": "xlarge",
+  "planning_seed": 42,
+  "victim_seed": null,
+  "sensor_seed": null,
+  "stage": "b3-operational",
+  "design": {
+    "datasets": [
+      1,
+      7,
+      10
+    ],
+    "jobs": 10,
+    "base_seed": 42,
+    "runs": 3,
+    "seeds": 10,
+    "w": [
+      0.0,
+      0.5,
+      1.0
+    ],
+    "simulation_victim_model": "random_walk",
+    "planners": [
+      "online_static_3step",
+      "dynamic_3step"
+    ],
+    "seeds_used": [
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51
+    ],
+    "evaluation": "stationary",
+    "victim_sampling_model": "matched_prior_stationary_exact"
+  },
+  "victim_sampling_model": "matched_prior_stationary_exact",
+  "simulation_victim_model": "random_walk",
+  "timestamp": "2026-08-25T13:02:10.101499",
+  "experiment_id": "b3-operational_20260825_130210_101492_c372f280",
+  "config_hash": "c372f2809deaf53f8be3bdb53f4495cea2a819857d704837db6d22d4ce9a26a4"
+}

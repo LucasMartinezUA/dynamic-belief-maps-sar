@@ -1,0 +1,27 @@
+This anonymous reproducibility package accompanies the manuscript "Dynamic
+Belief Maps and Vectorized Lookahead Planning for Wilderness Search and Rescue."
+
+This repository contains the Python implementation of the belief-update,
+multi-UAV planning, simulation, and evaluation methods described in the paper.
+It also provides the locked Pixi environment, the measurement tables and
+campaign folders for Block A, Block B and Block C, and the tooling that verifies
+them.
+
+The verified path through this repository is:
+
+    pixi run python scripts/verify_public_artifacts.py
+
+which checks every published artifact in results/audit_block_A|B|C against
+results/audit_block_C/public_manifest.json, and
+
+    scripts/run_block_c.sh --stage <stage> [runner options]
+
+for the Block C stages that are executable with this tree.
+
+The legacy v5 material (legacy_v5/data/, legacy_v5/figure_scripts/,
+legacy_v5/experiments/ and the legacy study runners under scripts/legacy_v5/) is
+archived as a frozen record. It is NOT reproducible from this repository and is
+not exercised by the verification above.
+
+See ReadMe.txt for concise execution instructions, README.md for the complete
+workflow, and legacy_v5/data/README.md for per-file provenance.

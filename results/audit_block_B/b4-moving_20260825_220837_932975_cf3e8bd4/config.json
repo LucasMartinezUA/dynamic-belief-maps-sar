@@ -1,0 +1,58 @@
+{
+  "implementation_version": "revision_B@ff544e3dab27",
+  "git_commit": "ff544e3dab270c9412bea847c1119b0311242e63",
+  "source_hash": "cef0d7e99cf98289cf781ea358600304c52099759ac7cef6c0a3cc8b44b6bdc2",
+  "belief_model": "evidence",
+  "revisit_weight": 0.5,
+  "simulation_num_victims": 0,
+  "evaluation_num_victims": 1,
+  "victim_model": "random_walk",
+  "detection_probability": 0.8,
+  "decay_tau": 10000.0,
+  "budget": 200000.0,
+  "size": "xlarge",
+  "planning_seed": 42,
+  "victim_seed": null,
+  "sensor_seed": null,
+  "stage": "b4-moving",
+  "design": {
+    "datasets": [
+      1,
+      7,
+      10
+    ],
+    "jobs": 10,
+    "base_seed": 42,
+    "runs": 3,
+    "seeds": 10,
+    "w": [
+      0.0,
+      0.5,
+      1.0
+    ],
+    "simulation_victim_model": "random_walk",
+    "planners": [
+      "online_static_3step",
+      "dynamic_3step"
+    ],
+    "seeds_used": [
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51
+    ],
+    "evaluation": "moving",
+    "victim_sampling_model": "matched_prior_random_walk"
+  },
+  "victim_sampling_model": "matched_prior_random_walk",
+  "simulation_victim_model": "random_walk",
+  "timestamp": "2026-08-25T22:08:37.932985",
+  "experiment_id": "b4-moving_20260825_220837_932975_cf3e8bd4",
+  "config_hash": "cf3e8bd4f590e54ea1c9ada123b29e903824317f2a4f17d4e44a13afc0a44817"
+}

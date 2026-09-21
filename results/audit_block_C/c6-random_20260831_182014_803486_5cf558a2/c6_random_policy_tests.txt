@@ -1,0 +1,21 @@
+# C6 random policy tests
+
+[PASS] Reproducibility — identical_trajectories=True
+[PASS] Policy-seed sensitivity — trajectories_differ=True
+[PASS] N8 validity — invalid_actions=0 hold_events=0
+[PASS] Uniform support — valid=8 selected=8 unselected=[]
+[PASS] Prior independence — identical_decisions=True
+[PASS] Belief independence — decisions_unchanged_under_posterior_patch=True
+[PASS] Observation independence — decisions_unchanged_under_history_mutation=True
+[PASS] No deconfliction — duplicate_target_cycles=44 conflicts=0 both_decisions_kept=True
+[PASS] No cross-UAV information — uav1_decisions_identical=True
+[PASS] RNG survivor invariance — survivor_streams_unchanged=True
+[PASS] Exposure multiplicity — n_c=3 (expected 3 independent exposures)
+[PASS] Simultaneous sensing — n_c=4 (2 UAVs x 2 steps = 4)
+[PASS] Unique L — L_unique_unchanged=True (L1=0.003101 L2=0.003101)
+[PASS] Budget identity — total_distance=3000.0 budget=3000 (identical accounting to other planners)
+[PASS] Termination identity — termination_reason=budget_exhausted done=True (same budget rule as the other planners; no Random-specific early stop)
+[PASS] Trace reconstruction — P_detect_reconstruct=True RMST_reconstruct=True L=0.008062
+[PASS] No map access (structural) — structural proof: no planner-map entry point was reached
+
+## RESULT PASS

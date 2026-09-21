@@ -1,0 +1,1049 @@
+{
+  "schema_version": "block-C-v1",
+  "stage": "c6-random",
+  "experiment_id": "c6-random_20260831_182014_803486_5cf558a2",
+  "created_at": "2026-08-31T18:20:14.803596+00:00",
+  "design": {
+    "schema_version": "block-C-v1",
+    "stage": "c6-random",
+    "random_policy": {
+      "name": "random_uniform_n8_uncoordinated",
+      "action_space": "valid_N8",
+      "include_center": false,
+      "target_deconfliction": false,
+      "uses_prior": false,
+      "uses_belief": false,
+      "uses_observed_mask": false,
+      "uses_revisit_weight": false,
+      "uses_other_uav_targets": false,
+      "memoryless": true,
+      "rule": "A_t^i = valid N8 neighbours of the current cell; a_t^i ~ Uniform(A_t^i) per timestep per UAV; no utility map, no prior/belief/observed-mask access, no revisit score, no other-UAV targets, no cycle reservation, no own history (memoryless); physical validity rules unchanged; target deconfliction OFF (two UAVs may keep the same target within a cycle)",
+      "no_valid_neighbour_policy": "physically impossible in the real domains; if it occurs the campaign aborts (random_hold_events must be 0); the code holds the cell only as a defensive safeguard, never as a designed action"
+    },
+    "stationary": {
+      "parent_campaign": "c5-generalization_20260827_181139_043334_662411fc",
+      "imported_trial_keys": [
+        [
+          1,
+          42
+        ],
+        [
+          1,
+          43
+        ],
+        [
+          1,
+          44
+        ],
+        [
+          1,
+          45
+        ],
+        [
+          1,
+          46
+        ],
+        [
+          1,
+          47
+        ],
+        [
+          1,
+          48
+        ],
+        [
+          1,
+          49
+        ],
+        [
+          1,
+          50
+        ],
+        [
+          1,
+          51
+        ],
+        [
+          2,
+          42
+        ],
+        [
+          2,
+          43
+        ],
+        [
+          2,
+          44
+        ],
+        [
+          2,
+          45
+        ],
+        [
+          2,
+          46
+        ],
+        [
+          2,
+          47
+        ],
+        [
+          2,
+          48
+        ],
+        [
+          2,
+          49
+        ],
+        [
+          2,
+          50
+        ],
+        [
+          2,
+          51
+        ],
+        [
+          3,
+          42
+        ],
+        [
+          3,
+          43
+        ],
+        [
+          3,
+          44
+        ],
+        [
+          3,
+          45
+        ],
+        [
+          3,
+          46
+        ],
+        [
+          3,
+          47
+        ],
+        [
+          3,
+          48
+        ],
+        [
+          3,
+          49
+        ],
+        [
+          3,
+          50
+        ],
+        [
+          3,
+          51
+        ],
+        [
+          4,
+          42
+        ],
+        [
+          4,
+          43
+        ],
+        [
+          4,
+          44
+        ],
+        [
+          4,
+          45
+        ],
+        [
+          4,
+          46
+        ],
+        [
+          4,
+          47
+        ],
+        [
+          4,
+          48
+        ],
+        [
+          4,
+          49
+        ],
+        [
+          4,
+          50
+        ],
+        [
+          4,
+          51
+        ],
+        [
+          5,
+          42
+        ],
+        [
+          5,
+          43
+        ],
+        [
+          5,
+          44
+        ],
+        [
+          5,
+          45
+        ],
+        [
+          5,
+          46
+        ],
+        [
+          5,
+          47
+        ],
+        [
+          5,
+          48
+        ],
+        [
+          5,
+          49
+        ],
+        [
+          5,
+          50
+        ],
+        [
+          5,
+          51
+        ],
+        [
+          6,
+          42
+        ],
+        [
+          6,
+          43
+        ],
+        [
+          6,
+          44
+        ],
+        [
+          6,
+          45
+        ],
+        [
+          6,
+          46
+        ],
+        [
+          6,
+          47
+        ],
+        [
+          6,
+          48
+        ],
+        [
+          6,
+          49
+        ],
+        [
+          6,
+          50
+        ],
+        [
+          6,
+          51
+        ],
+        [
+          7,
+          42
+        ],
+        [
+          7,
+          43
+        ],
+        [
+          7,
+          44
+        ],
+        [
+          7,
+          45
+        ],
+        [
+          7,
+          46
+        ],
+        [
+          7,
+          47
+        ],
+        [
+          7,
+          48
+        ],
+        [
+          7,
+          49
+        ],
+        [
+          7,
+          50
+        ],
+        [
+          7,
+          51
+        ],
+        [
+          8,
+          42
+        ],
+        [
+          8,
+          43
+        ],
+        [
+          8,
+          44
+        ],
+        [
+          8,
+          45
+        ],
+        [
+          8,
+          46
+        ],
+        [
+          8,
+          47
+        ],
+        [
+          8,
+          48
+        ],
+        [
+          8,
+          49
+        ],
+        [
+          8,
+          50
+        ],
+        [
+          8,
+          51
+        ],
+        [
+          9,
+          42
+        ],
+        [
+          9,
+          43
+        ],
+        [
+          9,
+          44
+        ],
+        [
+          9,
+          45
+        ],
+        [
+          9,
+          46
+        ],
+        [
+          9,
+          47
+        ],
+        [
+          9,
+          48
+        ],
+        [
+          9,
+          49
+        ],
+        [
+          9,
+          50
+        ],
+        [
+          9,
+          51
+        ],
+        [
+          10,
+          42
+        ],
+        [
+          10,
+          43
+        ],
+        [
+          10,
+          44
+        ],
+        [
+          10,
+          45
+        ],
+        [
+          10,
+          46
+        ],
+        [
+          10,
+          47
+        ],
+        [
+          10,
+          48
+        ],
+        [
+          10,
+          49
+        ],
+        [
+          10,
+          50
+        ],
+        [
+          10,
+          51
+        ],
+        [
+          11,
+          42
+        ],
+        [
+          11,
+          43
+        ],
+        [
+          11,
+          44
+        ],
+        [
+          11,
+          45
+        ],
+        [
+          11,
+          46
+        ],
+        [
+          11,
+          47
+        ],
+        [
+          11,
+          48
+        ],
+        [
+          11,
+          49
+        ],
+        [
+          11,
+          50
+        ],
+        [
+          11,
+          51
+        ],
+        [
+          12,
+          42
+        ],
+        [
+          12,
+          43
+        ],
+        [
+          12,
+          44
+        ],
+        [
+          12,
+          45
+        ],
+        [
+          12,
+          46
+        ],
+        [
+          12,
+          47
+        ],
+        [
+          12,
+          48
+        ],
+        [
+          12,
+          49
+        ],
+        [
+          12,
+          50
+        ],
+        [
+          12,
+          51
+        ],
+        [
+          13,
+          42
+        ],
+        [
+          13,
+          43
+        ],
+        [
+          13,
+          44
+        ],
+        [
+          13,
+          45
+        ],
+        [
+          13,
+          46
+        ],
+        [
+          13,
+          47
+        ],
+        [
+          13,
+          48
+        ],
+        [
+          13,
+          49
+        ],
+        [
+          13,
+          50
+        ],
+        [
+          13,
+          51
+        ],
+        [
+          14,
+          42
+        ],
+        [
+          14,
+          43
+        ],
+        [
+          14,
+          44
+        ],
+        [
+          14,
+          45
+        ],
+        [
+          14,
+          46
+        ],
+        [
+          14,
+          47
+        ],
+        [
+          14,
+          48
+        ],
+        [
+          14,
+          49
+        ],
+        [
+          14,
+          50
+        ],
+        [
+          14,
+          51
+        ],
+        [
+          15,
+          42
+        ],
+        [
+          15,
+          43
+        ],
+        [
+          15,
+          44
+        ],
+        [
+          15,
+          45
+        ],
+        [
+          15,
+          46
+        ],
+        [
+          15,
+          47
+        ],
+        [
+          15,
+          48
+        ],
+        [
+          15,
+          49
+        ],
+        [
+          15,
+          50
+        ],
+        [
+          15,
+          51
+        ],
+        [
+          20,
+          42
+        ],
+        [
+          20,
+          43
+        ],
+        [
+          20,
+          44
+        ],
+        [
+          20,
+          45
+        ],
+        [
+          20,
+          46
+        ],
+        [
+          20,
+          47
+        ],
+        [
+          20,
+          48
+        ],
+        [
+          20,
+          49
+        ],
+        [
+          20,
+          50
+        ],
+        [
+          20,
+          51
+        ],
+        [
+          25,
+          42
+        ],
+        [
+          25,
+          43
+        ],
+        [
+          25,
+          44
+        ],
+        [
+          25,
+          45
+        ],
+        [
+          25,
+          46
+        ],
+        [
+          25,
+          47
+        ],
+        [
+          25,
+          48
+        ],
+        [
+          25,
+          49
+        ],
+        [
+          25,
+          50
+        ],
+        [
+          25,
+          51
+        ],
+        [
+          30,
+          42
+        ],
+        [
+          30,
+          43
+        ],
+        [
+          30,
+          44
+        ],
+        [
+          30,
+          45
+        ],
+        [
+          30,
+          46
+        ],
+        [
+          30,
+          47
+        ],
+        [
+          30,
+          48
+        ],
+        [
+          30,
+          49
+        ],
+        [
+          30,
+          50
+        ],
+        [
+          30,
+          51
+        ]
+      ],
+      "inherit_exact_trial_keys": true,
+      "primary_endpoints": [
+        "P_detect",
+        "RMST"
+      ],
+      "secondary_endpoints": [
+        "L"
+      ]
+    },
+    "attrition": {
+      "parent_campaign": "c4-attrition_20260827_075624_501873_327229d1",
+      "imported_trial_keys": [
+        [
+          1,
+          42
+        ],
+        [
+          1,
+          43
+        ],
+        [
+          1,
+          44
+        ],
+        [
+          1,
+          45
+        ],
+        [
+          1,
+          46
+        ],
+        [
+          1,
+          47
+        ],
+        [
+          1,
+          48
+        ],
+        [
+          1,
+          49
+        ],
+        [
+          1,
+          50
+        ],
+        [
+          1,
+          51
+        ],
+        [
+          5,
+          42
+        ],
+        [
+          5,
+          43
+        ],
+        [
+          5,
+          44
+        ],
+        [
+          5,
+          45
+        ],
+        [
+          5,
+          46
+        ],
+        [
+          5,
+          47
+        ],
+        [
+          5,
+          48
+        ],
+        [
+          5,
+          49
+        ],
+        [
+          5,
+          50
+        ],
+        [
+          5,
+          51
+        ],
+        [
+          10,
+          42
+        ],
+        [
+          10,
+          43
+        ],
+        [
+          10,
+          44
+        ],
+        [
+          10,
+          45
+        ],
+        [
+          10,
+          46
+        ],
+        [
+          10,
+          47
+        ],
+        [
+          10,
+          48
+        ],
+        [
+          10,
+          49
+        ],
+        [
+          10,
+          50
+        ],
+        [
+          10,
+          51
+        ]
+      ],
+      "failure_levels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "inherit_exact_trial_keys": true,
+      "primary_endpoints": [
+        "P_detect",
+        "RMST"
+      ],
+      "secondary_endpoints": [
+        "L"
+      ],
+      "absolute_analysis": true,
+      "own_baseline_retention_analysis": true
+    },
+    "randomness": {
+      "common_environment_seeds_required": true,
+      "separate_policy_seed": true,
+      "rng_per_uav": true,
+      "rng_scheme": "policy_seed = SeedSequence([planning_seed, dataset_id, hash('c6-random-policy')]); per-UAV stream = SeedSequence([policy_seed, uav_id]) -> default_rng(derived_seed); one stream per persistent UAV identity; streams are never shared or consumed sequentially across UAVs",
+      "survivor_invariance": "streams keyed by persistent uav_id; removing a UAV never shifts survivors",
+      "attrition_environment_seed_origin": "victim_seed/sensor_seed/distribution_seed are inherited verbatim from the frozen C4 rows, which recorded them as 'none': the C4 protocol uses stationary matched-prior victims and deterministic exposure metrics with no sensor RNG draws. failure_seed is a real value and is inherited as well. The identical none==none comparison is therefore documented factual inheritance, not evidence of seed pairing."
+    },
+    "analysis": {
+      "expected_sign_preregistered": false,
+      "validity_independent_of_result": true,
+      "reuse_existing_C_statistics": true,
+      "global_summary_method": "per-dataset effect first, then bootstrap over dataset means (C5 philosophy)"
+    },
+    "interpretation_tree_predetermined": [
+      {
+        "result": "Random has low absolute performance but good retention",
+        "interpretation": "Absence of territorial partitioning can produce structural robustness without implying planning quality."
+      },
+      {
+        "result": "Random retains similar to online_static but online_static has much better absolute P_detect",
+        "interpretation": "Partition-free architecture explains part of the retention; informed replanning explains search quality."
+      },
+      {
+        "result": "Online_static retains clearly better than Random",
+        "interpretation": "Informed replanning adds robustness beyond removing fixed sectors."
+      },
+      {
+        "result": "Dynamic beats online_static absolutely but not in retention",
+        "interpretation": "EvidenceBelief improves search but shows no differential contribution to robustness under fleet reduction."
+      },
+      {
+        "result": "Dynamic and online_static have similar retention",
+        "interpretation": "Maintain C4 conclusion: robustness belongs mainly to online replanning."
+      },
+      {
+        "result": "Pizza_repartition approaches the online planners",
+        "interpretation": "Much of the original v5 advantage over Pizza came from the orphan-sector protocol."
+      },
+      {
+        "result": "Random ~ informed planners on P_detect/RMST",
+        "interpretation": "Weakens the evidence of practical value of informed planning; verify correctness and, if valid, report it."
+      },
+      {
+        "result": "Random consistently beats informed planners",
+        "interpretation": "Important adverse result; first audit correctness/pairing, then accept it if reproducible."
+      },
+      {
+        "result": "Random has good retention but very low k=0",
+        "interpretation": "Do not present retention in isolation as evidence of better operational robustness."
+      }
+    ],
+    "causal_hierarchy": "dynamic_evidence_3step vs online_static_3step = EvidenceBelief effect; online_static vs Random = informed online planning vs naive floor; Random / pizza_repartition / online planners = attrition architecture triangulation",
+    "prohibited_wording": [
+      "fault tolerance",
+      "positive synergy",
+      "evidence-driven fleet resilience",
+      "moving-victim robustness",
+      "maximize heterogeneity"
+    ],
+    "na_sentinel": {
+      "value": "not_applicable",
+      "columns": [
+        "belief_model",
+        "lookahead_N",
+        "w",
+        "tau"
+      ],
+      "reason": "policy-level concepts that Random does not use; environment parameters are recorded separately"
+    },
+    "naming": {
+      "row_planning_mode": "random_uniform_n8_uncoordinated",
+      "frozen_arms": {
+        "online_static_3step": "online_static_3step",
+        "dynamic_3step": "dynamic_evidence_3step"
+      },
+      "output_method_label": "dynamic_evidence_3step",
+      "source_planning_mode_column": "source_planning_mode"
+    },
+    "frozen": {
+      "w": 0.5,
+      "p_d": 0.8,
+      "tau": 10000.0,
+      "budget": 200000.0,
+      "size": "xlarge",
+      "num_drones": 5,
+      "fov_deg": 45.0,
+      "altitude": 80.0,
+      "drone_speed": 5.0,
+      "victim_speed": 0.5,
+      "dt": 1.0
+    },
+    "integrated_planners": [
+      "random_uniform_n8_uncoordinated",
+      "pizza_repartition",
+      "online_static_3step",
+      "dynamic_evidence_3step"
+    ]
+  },
+  "parents": {
+    "stationary": {
+      "experiment_id": "c5-generalization_20260827_181139_043334_662411fc",
+      "gate": "GENERALIZES",
+      "imported_trial_keys": 180
+    },
+    "attrition": {
+      "experiment_id": "c4-attrition_20260827_075624_501873_327229d1",
+      "gate": "NO_DIFFERENTIAL_ADVANTAGE",
+      "imported_trial_keys": 30
+    }
+  },
+  "policy_seed_scheme": "policy_seed = SeedSequence([planning_seed, dataset_id, hash('c6-random-policy')]); per-UAV stream = SeedSequence([policy_seed, uav_id]) -> default_rng(derived_seed); one stream per persistent UAV identity; streams are never shared or consumed sequentially across UAVs",
+  "run_counts": {
+    "stationary_rows": 180,
+    "attrition_rows": 120,
+    "expected_stationary_rows": 180,
+    "expected_attrition_rows": 120
+  },
+  "checks": {
+    "policy_tests_pass": true,
+    "preflight_pass": true,
+    "full_scientific_design": true,
+    "exact_stationary_parent_keyset": true,
+    "exact_attrition_parent_keyset": true,
+    "stationary_complete": true,
+    "attrition_complete": true,
+    "stationary_pairing_complete": true,
+    "fairness_checks_pass": true,
+    "exposure_semantics_valid": true,
+    "provenance_valid": true,
+    "c5_contrast_recomputation_matches_frozen": true
+  },
+  "gate": {
+    "C6_RANDOM_GREEN": true,
+    "C6_RANDOM_SMOKE_PASS": false
+  },
+  "artifacts": [
+    "c6_design.json",
+    "c6_preflight.txt",
+    "c6_random_attrition_contrasts.csv",
+    "c6_random_attrition_fairness_checks.csv",
+    "c6_random_attrition_retention.csv",
+    "c6_random_attrition_runs.csv",
+    "c6_random_attrition_summary.csv",
+    "c6_random_policy_tests.txt",
+    "c6_random_stationary_contrasts.csv",
+    "c6_random_stationary_dataset_effects.csv",
+    "c6_random_stationary_global_summary.json",
+    "c6_random_stationary_runs.csv",
+    "c6_random_stationary_summary.csv",
+    "config.json"
+  ]
+}

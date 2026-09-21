@@ -1,0 +1,10 @@
+{
+  "n_cells": 540,
+  "expected_cells": 540,
+  "full_design_cells_expected": 540,
+  "missing": 0,
+  "mismatched": 538,
+  "matched": 2,
+  "all_matched": false,
+  "n_methods": 3
+}

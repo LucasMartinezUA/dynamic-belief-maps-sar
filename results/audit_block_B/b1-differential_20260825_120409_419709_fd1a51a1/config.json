@@ -1,0 +1,54 @@
+{
+  "implementation_version": "revision_B@ff544e3dab27",
+  "git_commit": "ff544e3dab270c9412bea847c1119b0311242e63",
+  "source_hash": "cef0d7e99cf98289cf781ea358600304c52099759ac7cef6c0a3cc8b44b6bdc2",
+  "belief_model": "evidence",
+  "revisit_weight": 0.5,
+  "simulation_num_victims": 0,
+  "evaluation_num_victims": 1,
+  "victim_model": "random_walk",
+  "detection_probability": 0.8,
+  "decay_tau": 10000.0,
+  "budget": 200000.0,
+  "size": "xlarge",
+  "planning_seed": 42,
+  "victim_seed": null,
+  "sensor_seed": null,
+  "stage": "b1-differential",
+  "design": {
+    "datasets": [
+      1,
+      7,
+      10
+    ],
+    "jobs": 10,
+    "base_seed": 42,
+    "runs": 3,
+    "seeds": 10,
+    "w": [
+      0.5
+    ],
+    "simulation_victim_model": "random_walk",
+    "modes": [
+      "dynamic",
+      "dynamic_3step",
+      "online_static",
+      "online_static_3step"
+    ],
+    "beliefs": [
+      "legacy",
+      "evidence"
+    ],
+    "seeds_used": [
+      42,
+      43,
+      44
+    ],
+    "victim_sampling_model": "none_planning_only"
+  },
+  "victim_sampling_model": "none_planning_only",
+  "simulation_victim_model": "random_walk",
+  "timestamp": "2026-08-25T12:04:09.419716",
+  "experiment_id": "b1-differential_20260825_120409_419709_fd1a51a1",
+  "config_hash": "fd1a51a14df9368e56811aad1772c3bd3c9b85933cf0ea20cb4a2f03772a5fe0"
+}

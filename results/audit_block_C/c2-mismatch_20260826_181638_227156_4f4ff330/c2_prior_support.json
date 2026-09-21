@@ -1,0 +1,14 @@
+{
+  "1": {
+    "valid_support_cells": 341588,
+    "zero_prior_cells_inside_domain": 72519
+  },
+  "7": {
+    "valid_support_cells": 342140,
+    "zero_prior_cells_inside_domain": 2045
+  },
+  "10": {
+    "valid_support_cells": 341053,
+    "zero_prior_cells_inside_domain": 181902
+  }
+}
